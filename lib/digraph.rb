@@ -1,0 +1,3 @@
+class Digraph
+
+end
