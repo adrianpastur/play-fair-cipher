@@ -1,45 +1,35 @@
 require 'pry'
+require_relative 'keyword'
 
-class Cypher
+class Table
   def initialize(keyword)
-    @keyword = keyword
+    @keyword = Keyword.new(keyword)
     @board = []
   end
 
-  attr_accessor :board, :message
-  attr_reader :keyword
+  attr_accessor :board, :keyword
 
-  ALPHABET = ("a".."y").to_a
+  ALPHABET = ("A".."Z").to_a
+  ALPHABET.delete('J')
 
-  def key_table(keyword)
-    kw = keyword.gsub(/\s+/, "")
-    kw_array = [kw]
-    kw_array = kw_array.first.chars.each_slice(1).to_a.map(&:join)
-    kw_array = kw_array.uniq
-
-    kw_array.each {|k| board << k}
+  def keyword_to_kt(keyword)
+    k_array = keyword.keyword.split(//)
+    k_array.each {|k| board << k}
   end
 
-  def populate_kt(board)
-    a = ALPHABET - board
+  def populate_kt(keyword)
+
+    k_array = keyword.keyword.split(//)
+
+    a = ALPHABET - k_array
     a.each {|k| board << k}
     board.each_slice(5).to_a
+
   end
 
-  def fill_table(kw_array, board)
-    i = 0
-    j = 0
-
-    a = ALPHABET - kw_array
-
-    board.each {|e|
-
-      if e == nil
-        e = a[i]
-        i += 1
-      end
-      binding.pry
-    }
+  def fill_table(keyword)
+    keyword_to_kt(keyword)
+    populate_kt(keyword)
   end
 
 
