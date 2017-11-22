@@ -15,7 +15,6 @@ private
     kw_array = [kw]
     kw_array = kw_array.first.chars.each_slice(1).to_a.map(&:join)
     kw_array = kw_array.uniq
-
     kw_array.each {|k| result += k}
     result
   end

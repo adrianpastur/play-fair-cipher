@@ -31,7 +31,5 @@ class Table
     keyword_to_kt(keyword)
     populate_kt(keyword)
   end
-
-
-  binding.pry
+binding.pry
 end

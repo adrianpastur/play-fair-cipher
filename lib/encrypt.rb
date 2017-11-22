@@ -1,6 +1,7 @@
 require 'pry'
+require_relative 'message'
 require_relative 'key_table'
 
-class Digraph
+class Encrypt
 
 end
