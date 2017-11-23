@@ -18,18 +18,16 @@ class Table
   end
 
   def populate_kt(keyword)
-
     k_array = keyword.keyword.split(//)
 
     a = ALPHABET - k_array
     a.each {|k| board << k}
     board.each_slice(5).to_a
-
   end
 
   def fill_table(keyword)
     keyword_to_kt(keyword)
     populate_kt(keyword)
   end
-binding.pry
+
 end
