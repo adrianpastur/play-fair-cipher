@@ -87,6 +87,4 @@ class Encrypt
       false
     end
   end
-binding.pry
 end
- # c = Encrypt.new('message','keyword')

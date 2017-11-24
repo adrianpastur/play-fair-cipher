@@ -6,16 +6,15 @@ class Message
     @message = message.upcase.gsub(/\s+/,"").gsub("J","I")
   end
 
-  attr_accessor :message, :a
+  attr_accessor :message, :new_message
 
   def message_split(message)
-    @a = message.split('')
-    a.each_with_index do |x, index|
-        next_x = a[index + 1]
-      a.insert(index + 1,'X')  if x == next_x
+    @new_message = message.split('')
+    new_message.each_with_index do |x, index|
+        next_x = new_message[index + 1]
+      new_message.insert(index + 1,'X')  if x == next_x
     end
-    a << "X" if a.size.odd?
-    return a
+    new_message << "X" if new_message.size.odd?
+    return new_message
   end
 end
-# c = Message.new('message')
