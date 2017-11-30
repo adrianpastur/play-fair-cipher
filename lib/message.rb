@@ -3,7 +3,7 @@ require 'pry'
 
 class Message
   def initialize(message)
-    @message = message.upcase.gsub(/\s+/,"").gsub("J","I")
+    @message = message.upcase.gsub(/\s+/,'').gsub('J','I')
   end
 
   attr_accessor :message, :new_message
@@ -14,7 +14,7 @@ class Message
         next_x = new_message[index + 1]
       new_message.insert(index + 1,'X')  if x == next_x
     end
-    new_message << "X" if new_message.size.odd?
+    new_message << 'X' if new_message.size.odd?
     return new_message
   end
 end
