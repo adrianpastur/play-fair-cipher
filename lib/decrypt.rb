@@ -14,5 +14,6 @@ class Decrypt < Base\
         next_x = transformed_message[index + 1]
       transformed_message.delete_at(index)  if previous_x == next_x && x == 'X'
     end
+    transformed_message = transformed_message.join('')
   end
 end
